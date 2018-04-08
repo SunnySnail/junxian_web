@@ -1,0 +1,16 @@
+<!--components/modal/modal.wxml-->
+<view class="modal-wrap" hidden="{{hidden}}">
+    <view class="modal-con">
+        <view class="modal-header">{{modalTitle}}</view>
+        <view class="modal-body">
+            <slot name="modalBody"></slot>
+        </view>
+        <view class="modal-footer" wx:if="{{!hasFooter}}">
+            <slot name="modalFooter"></slot>        
+        </view>
+        <view class="modal-footer" wx:if="{{hasFooter}}">
+            <button bindtap="confirm" class="btn confirm-btn">确定</button>
+            <button bindtap="cancel" class="btn cancel-btn">取消</button>
+        </view>
+    </view>
+</view>
