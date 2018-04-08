@@ -1,0 +1,15 @@
+<!--pages/guide/guide.wxml-->
+<view class="banner">
+    <image
+        class="banner-pic"
+        src="../../images/banner.png"
+        mode="widthFix">
+    </image>
+    <view class="msg">
+      <view>公众号对话回复“紫霞”</view>
+      <view>获取秘笈，开启一键定投</view>
+    </view>
+    <navigator
+      class="invest-btn"
+      open-type="navigateBack">返回</navigator>
+</view>

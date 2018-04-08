@@ -1,0 +1,28 @@
+/* pages/explain/explain.wxss */
+
+.title-pic {
+    display: block;
+    width: 220rpx;
+    margin: 0 auto;
+}
+
+.explain-desc {
+    display: block;
+    padding: 0 40rpx;
+    font-size: 30rpx;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.explain-text {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+  padding: 20px 0;
+}
+
+.explain-pic {
+    margin-top: 40rpx;
+    width: 100%;
+}

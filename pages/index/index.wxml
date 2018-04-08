@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="indexes-con">
+        <view class="indexes-item" wx:if="{{indexInfo}}" bindtap="bindNavToIndex">
+            <text>{{indexInfo.indexfullname}}</text>
+            <text class="num">{{indexInfo.nowprice}}</text>
+        </view>
+        <view class="indexes-item" wx:if="{{indexInfo}}">
+            <picker bindchange="bindPickerChange" value="{{value}}" range="{{array}}">
+                <text>{{array[value]}}</text><view class="more-icon"></view>
+                <text wx:if="{{value==0}}" class="num">{{indexInfo.now_ma_250}}</text>
+                <text wx:if="{{value==1}}" class="num">{{indexInfo.now_ma_120}}</text>
+                <text wx:if="{{value==2}}" class="num">{{indexInfo.now_ma_60}}</text>
+            </picker>
+        </view>
+    </view>
+    <view class="loading1-tips" wx:if="{{!indexInfo}}">
+        图表绘制中...
+    </view>
+</view>
+<canvas
+    disable-scroll=true
+    bindtouchstart="bindtouch"
+    bindtouchmove="bindtouch"
+    bindtouchend="bindtouch"
+    wx:if="{{indexInfo}}"
+    canvas-id="charts"
+></canvas>
+<navigator url="/pages/explain/explain" class="explain-jump" open-type="navigate" hover-class="check">查看定投策略 ></navigator>
+<view class="update-info">
+    <text class="desc">最近250交易日走势</text>
+    <text class="date">{{updateTime}}更新</text>
+</view>
+<scroll-view class="funds-list"
+    scroll-y
+    scroll-with-animation="true"
+    scroll-top="{{scrollTop}}"
+    wx:if="{{indexesList.length>0}}">
+    <view class="fund {{item.indexfullname==indexInfo.indexfullname?'chosen':''}}"
+        wx:for="{{indexesList}}"
+        wx:for-item="item"
+        wx:key="indexcode"
+        data-fund="{{index}}"
+        bindtap="choseIndex">
+        <text class="name" data-fund="{{index}}" bindtap="choseIndex">{{item.indexfullname}}</text>
+        <text class="index-num" wx:if="{{value==0}}" data-fund="{{index}}" bindtap="choseIndex">偏移{{item.diff_250>0?'+':''}}{{item.diff_250}}%</text>
+        <text class="index-num" wx:if="{{value==1}}" data-fund="{{index}}" bindtap="choseIndex">偏移{{item.diff_120>0?'+':''}}{{item.diff_120}}%</text>
+        <text class="index-num" wx:if="{{value==2}}" data-fund="{{index}}" bindtap="choseIndex">偏移{{item.diff_60>0?'+':''}}{{item.diff_60}}%</text>
+    </view>
+    <view class="explain">
+        <text class="explain-text">* 偏移值 = (指数实时值 - 均线值) / 均线值 * 100%</text>
+        <text class="explain-text">* 均线定投推荐选用250日均线为比较基准的策略</text>
+        <text class="explain-text">* 由「阿牛定投」提供支持</text>
+    </view>
+</scroll-view>
+<view class="loading2-tips" wx:if="{{!indexesList}}">
+    列表数据正在拼命加载...
+</view>
+<button
+  open-type="contact"
+  class="invest-btn"
+  session-from="{{from}}"
+>一键定投</button>

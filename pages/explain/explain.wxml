@@ -1,0 +1,18 @@
+<!--pages/explain/explain.wxml-->
+<image
+    class="title-pic"
+    src="../../images/thumb_raw_1513084079.png"
+    mode="widthFix">
+</image>
+<text class="explain-desc">
+    将指数实时值与均线值比较，逢低买入，逢高卖出，是最简单有效的智能定投策略，年化收益率秒杀简单定投。
+</text>
+<text class="explain-desc">
+    推荐选用250日均线作为比较基准，依据指数偏移值采用以下策略。
+</text>
+<image
+    class="explain-pic"
+    src="../../images/explain.png"
+    mode="widthFix">
+</image>
+<text class="explain-text">由「阿牛定投」提供支持</text>
