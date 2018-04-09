@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "base-modal": "/components/modal/modal"
+    }
+}

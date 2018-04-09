@@ -12,9 +12,9 @@ Component({
             type: Boolean,
             value: true
         },
-        hasFooter: {
-            type: Boolean,
-            value: true
+        from: {
+            type: String,
+            value: 'aniu'
         }
     },
 
@@ -33,14 +33,11 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        confirm: function() {
-            this.triggerEvent('confirm');
-        },
-        cancel: function() {
+        hideKefu: function() {
             this.setData({
                 hidden: true
             })
-            this.triggerEvent('cancel');
+            this.triggerEvent('hide');
         }
     }
 })

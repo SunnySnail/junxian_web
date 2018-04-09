@@ -25,6 +25,7 @@
     bindtouchend="bindtouch"
     wx:if="{{indexInfo}}"
     canvas-id="charts"
+    hidden="{{!hidden}}"
 ></canvas>
 <navigator url="/pages/explain/explain" class="explain-jump" open-type="navigate" hover-class="check">查看定投策略 ></navigator>
 <view class="update-info">
@@ -57,7 +58,13 @@
     列表数据正在拼命加载...
 </view>
 <button
-  open-type="contact"
-  class="invest-btn"
-  session-from="{{from}}"
+    bindtap="gotoKefu"
+    class="invest-btn"
 >一键定投</button>
+<base-modal
+    bindhide="hideKefu"
+    from="{{from}}"
+    hidden="{{hidden}}"
+    modalTitle="提示">
+</base-modal>
+

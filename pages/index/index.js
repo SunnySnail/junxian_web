@@ -20,8 +20,8 @@ Page({
         chosenClass: '',
         indexNum: 0,
         scrollTop: 0,
-        itemHeight: 0
-
+        itemHeight: 0,
+        hidden: true
     },
     onLoad: function(options) {
         this.setData({
@@ -367,5 +367,15 @@ Page({
             title: '逢低买入 逢高卖出',
             path: 'pages/index/index'
         }
+    },
+    gotoKefu: function(){
+        this.setData({
+            hidden: false
+        })
+    },
+    hideKefu: function() {
+        this.setData({
+            hidden: true
+        })
     }
 })

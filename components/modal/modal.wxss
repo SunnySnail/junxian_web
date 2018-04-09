@@ -69,3 +69,25 @@ input {
     right: 0;
     color: green;
 }
+
+.modal-footer-btn {
+    padding: 0;
+    left: 0;
+    right: 0;
+    border: 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 10rpx 10rpx;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    font-size: 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #FF6C01;
+}
+
+.modal-footer-btn:after {
+    border: 0;
+    border-radius: 0;
+}

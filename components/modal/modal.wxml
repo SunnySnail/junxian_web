@@ -3,14 +3,12 @@
     <view class="modal-con">
         <view class="modal-header">{{modalTitle}}</view>
         <view class="modal-body">
-            <slot name="modalBody"></slot>
+            <view class="modal-input-body" slot="modalBody">
+                <text>进入对话后请发送“1”，会得到自动记账方法。</text>
+            </view>
         </view>
-        <view class="modal-footer" wx:if="{{!hasFooter}}">
-            <slot name="modalFooter"></slot>        
-        </view>
-        <view class="modal-footer" wx:if="{{hasFooter}}">
-            <button bindtap="confirm" class="btn confirm-btn">确定</button>
-            <button bindtap="cancel" class="btn cancel-btn">取消</button>
+        <view class="modal-footer">
+            <button class="modal-footer-btn" slot="modalFooter" bindtap="hideKefu" open-type="contact" session-from="{{from}}">进入对话</button>
         </view>
     </view>
 </view>
