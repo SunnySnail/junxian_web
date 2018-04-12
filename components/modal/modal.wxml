@@ -4,7 +4,7 @@
         <view class="modal-header">{{modalTitle}}</view>
         <view class="modal-body">
             <view class="modal-input-body" slot="modalBody">
-                <text>进入对话后请发送“1”，会得到自动记账方法。</text>
+                <text>进入对话后请发送“1”，会得到一键定投方法。</text>
             </view>
         </view>
         <view class="modal-footer">
